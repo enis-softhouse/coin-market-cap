@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {CryptoCurrencyService} from '../../api/crypto-currency.service';
 import {ICryptoCurrency} from '../../modules/crypto-currency';
 import {ActivatedRoute, Params} from '@angular/router';
-import {select} from '@angular-redux/store';
-import {Observable} from 'rxjs/Observable';
 
 import {CurrencyActions} from '../../actions/currency.action';
 
@@ -23,6 +21,10 @@ export class CryptoCurrencyDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.callApi();
+  }
+
+  callApi() {
     this._cryptoCurrencyService.getCryptoCurrency(this.id, this.currencyActions.getCurrency())
       .subscribe(
         data => {
