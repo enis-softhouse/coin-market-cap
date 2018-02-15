@@ -15,8 +15,11 @@
         <th scope="row">{{ currency.rank }}</th>
         <th>{{ currency.symbol }}</th>
         <th>
-          <p *ngIf="currency$ == 'USD'">{{ currency.price_usd }}</p>
-          <p *ngIf="currency$ != 'USD'">{{ currency.price_eur }}{{ currency.price_cny }}</p>
+          <p>{{ currency.price_usd }}</p>
+          <!--<p *ngIf="currency$ != 'USD'">{{ currency.price_eur }}{{ currency.price_cny }}</p>-->
+        </th>
+        <th>
+          {{currency['24h_volume_usd']}}
         </th>
       </tr>
       </tbody>
