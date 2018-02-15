@@ -17,6 +17,7 @@ import {CryptoCurrencyActions} from './actions/crypto-currency.action';
 import {CurrencyActions} from './actions/currency.action';
 
 import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {AppComponent} from './app.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     NgReduxModule
   ],
   providers: [

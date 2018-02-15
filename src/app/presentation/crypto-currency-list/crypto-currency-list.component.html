@@ -1,17 +1,25 @@
-<table>
-  <thead>
-  <tr>
-    <th>Rank </th>
-    <th>Symbol </th>
-    <th>Price in {{ currency$ | async }}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let currency of cryptoCurrencies$ | async">
-    <td>{{ currency.rank }}</td>
-    <td>{{ currency.symbol }}</td>
-    <td *ngIf="currency$ && currency$ === 'USD'">{{ currency.price_usd }}</td>
-    <td *ngIf="currency$ && currency$ !== 'USD'">{{ currency.price_eur }}{{ currency.price_cny }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <!-- Content here -->
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price in {{ currency$ | async }}</th>
+        <th scope="col">24 hour change</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let currency of cryptoCurrencies$ | async">
+        <th scope="row">{{ currency.rank }}</th>
+        <th>{{ currency.symbol }}</th>
+        <th>
+          <p *ngIf="currency$ == 'USD'">{{ currency.price_usd }}</p>
+          <p *ngIf="currency$ != 'USD'">{{ currency.price_eur }}{{ currency.price_cny }}</p>
+        </th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
