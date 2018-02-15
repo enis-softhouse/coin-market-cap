@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CurrencyActions } from '../../actions/currency.action';
-import { CryptoCurrencyActions } from '../../actions/crypto-currency.action';
+import {Component, OnInit} from '@angular/core';
+import {CurrencyActions} from '../../actions/currency.action';
+import {CryptoCurrencyActions} from '../../actions/crypto-currency.action';
 
 @Component({
   selector: 'app-menu',
@@ -8,15 +8,13 @@ import { CryptoCurrencyActions } from '../../actions/crypto-currency.action';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(
-    private currencyActions: CurrencyActions,
-    private cryptoCurrencyActions: CryptoCurrencyActions
-  ) {
+  constructor(public currencyActions: CurrencyActions,
+              private cryptoCurrencyActions: CryptoCurrencyActions) {
   }
 
-  changeCurrency(currency){
-      this.currencyActions.setCurrency(currency);
-      this.cryptoCurrencyActions.getCryptoCurrencies();
+  changeCurrency(currency) {
+    this.currencyActions.setCurrency(currency);
+    this.cryptoCurrencyActions.getCryptoCurrencies();
   }
 
   ngOnInit() {

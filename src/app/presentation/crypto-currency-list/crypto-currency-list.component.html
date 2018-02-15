@@ -11,7 +11,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let currency of cryptoCurrencies$ | async">
+      <tr *ngFor="let currency of cryptoCurrencies$ | async" [routerLink]="['/crypto-currency',currency.id]">
         <th scope="row">{{ currency.rank }}</th>
         <th>{{ currency.symbol }}</th>
         <th>

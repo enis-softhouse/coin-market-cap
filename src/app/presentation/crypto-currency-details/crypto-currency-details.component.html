@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="form-group" *ngIf="cryptoCurrency">
+      <p class="text-justify">{{cryptoCurrency.rank}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.name}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.symbol}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency['24h_volume_usd']}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.price_btc}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.percent_change_1h}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.percent_change_7d}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.percent_change_24h}}</p><br/>
+      <p class="text-justify">{{cryptoCurrency.total_supply}}</p><br/>
+    </div>
+
+  </div>
+</div>

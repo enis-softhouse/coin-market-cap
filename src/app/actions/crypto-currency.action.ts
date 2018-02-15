@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from '../store';
-import { ICryptoCurrency } from '../modules/crypto-currency';
 import { CryptoCurrencyService } from '../api/crypto-currency.service';
 
 export const GET_CRYPTOCURRENCIES = "GET_CRYPTOCURRENCIES";
@@ -16,7 +14,7 @@ export class CryptoCurrencyActions{
     ){ }
 
     getCryptoCurrencies(){
-        let _state = this.ngRedux.getState();
+        const _state = this.ngRedux.getState();
         this.cryptoCurrencyService.getCryptoCurrencies((_state) ? _state.currency : "USD")
         .subscribe(cryptoCurrencies => {
             this.ngRedux.dispatch({

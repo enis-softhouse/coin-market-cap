@@ -14,4 +14,11 @@ export class CryptoCurrencyService {
     return this._http.get(baseUrl + '?convert=' + currency)
       .map((response: Response) => <ICryptoCurrency[]>response.json());
   }
+
+  getCryptoCurrency(id: string, currency: string) {
+    console.log(id, currency);
+    return this._http.get(baseUrl + id + '/?convert=' + currency)
+      .map((response: Response) => <ICryptoCurrency>response.json()[0]);
+  }
+
 }
