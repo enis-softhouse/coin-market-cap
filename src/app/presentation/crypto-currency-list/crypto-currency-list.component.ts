@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { NgRedux, select } from '@angular-redux/store';
+import { Observable } from 'rxjs/Observable';
+
+import { IAppState } from '../../store';
+import { ICryptoCurrency } from '../../modules/crypto-currency';
+import { CryptoCurrencyActions } from '../../actions/crypto-currency.action';
+
+@Component({
+  selector: 'app-crypto-currency-list',
+  templateUrl: './crypto-currency-list.component.html'
+})
+export class CryptoCurrencyListComponent implements OnInit {
+
+  @select('cryptoCurrencies') cryptoCurrencies$: Observable<ICryptoCurrency>;
+  @select('currency') currency$: Observable<string>;
+
+  constructor(
+    private cryptoCurrencyActions: CryptoCurrencyActions
+  ) { }
+
+  ngOnInit() {
+    this.cryptoCurrencyActions.getCryptoCurrencies();
+  }
+}
