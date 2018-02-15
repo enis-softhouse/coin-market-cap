@@ -1,6 +1,6 @@
-import { ICryptoCurrency } from '../modules/crypto-currency';
+import {ICryptoCurrency} from '../modules/crypto-currency';
 
 export interface IAppState {
-    cryptoCurrencies: ICryptoCurrency[],
-    currency: string
+  cryptoCurrencies: ICryptoCurrency[],
+  currency: string,
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgRedux, select } from '@angular-redux/store';
+import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs/Observable';
 
-import { IAppState } from '../../store';
 import { ICryptoCurrency } from '../../modules/crypto-currency';
 import { CryptoCurrencyActions } from '../../actions/crypto-currency.action';
 
