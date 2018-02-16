@@ -23,14 +23,14 @@
           <td>{{ currency.rank }}</td>
           <td>{{ currency.symbol }}</td>
           <td>
-            <span
-              *ngIf="currency.price_eur || currency.price_cny">{{ currency.price_eur }}{{ currency.price_cny }}</span>
-            <span *ngIf="!currency.price_eur && !currency.price_cny">{{ currency.price_usd }}</span>
+            <span *ngIf="currency.price_eur">{{ currency.price_eur }} EUR</span>
+            <span *ngIf="currency.price_cny">{{ currency.price_eur }} CNY</span>
+            <span *ngIf="!currency.price_eur && !currency.price_cny">{{ currency.price_usd }} USD</span>
           </td>
           <td>
-            <span *ngIf="currency['24h_volume_eur'] || currency['24h_volume_cny']">{{ currency['24h_volume_eur'] }}{{ currency['24h_volume_cny'] }}</span>
-            <span
-              *ngIf="!currency['24h_volume_eur'] && !currency['24h_volume_cny']">{{ currency['24h_volume_usd'] }}</span>
+            <span *ngIf="currency['24h_volume_eur']">{{ currency['24h_volume_eur'] }} EUR</span>
+            <span *ngIf="currency['24h_volume_cny']">{{ currency['24h_volume_cny'] }} CNY</span>
+            <span *ngIf="!currency['24h_volume_eur'] && !currency['24h_volume_cny']">{{ currency['24h_volume_usd'] }} USD</span>
           </td>
         </tr>
         </tbody>
