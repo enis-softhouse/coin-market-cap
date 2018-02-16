@@ -18,6 +18,7 @@ export class CurrencyActions {
   }
 
   getCurrency() {
-    return this.ngRedux.getState().currency;
+    const _state = this.ngRedux.getState();
+    return (_state) ? _state.currency : "USD";
   }
 }

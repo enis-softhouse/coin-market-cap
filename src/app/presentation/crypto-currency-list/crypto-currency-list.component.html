@@ -1,28 +1,37 @@
+<app-menu (action)="cryptoCurrencyActions.getCryptoCurrencies()"></app-menu>
 <div class="container">
-  <div class="row">
+  <div class="col-md-12">
+    <div class="pull-right">
+      <button class="btn btn-primary refresh-btn" (click)="cryptoCurrencyActions.getCryptoCurrencies()">Refresh list</button>
+    </div>
+  </div>
+  <div class="col-md-12">
     <!-- Content here -->
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">Rank</th>
-        <th scope="col">Symbol</th>
-        <th scope="col">Price in {{ currency$ | async }}</th>
-        <th scope="col">24 hour change</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let currency of cryptoCurrencies$ | async" [routerLink]="['/crypto-currency',currency.id]">
-        <th scope="row">{{ currency.rank }}</th>
-        <th>{{ currency.symbol }}</th>
-        <th>
-          <p>{{ currency.price_usd }}</p>
-          <!--<p *ngIf="currency$ != 'USD'">{{ currency.price_eur }}{{ currency.price_cny }}</p>-->
-        </th>
-        <th>
-          {{currency['24h_volume_usd']}}
-        </th>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table" *ngIf="cryptoCurrencies$">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Symbol</th>
+              <th>Price in {{ currency$ | async }}</th>
+              <th>24 hour change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let currency of cryptoCurrencies$ | async" [routerLink]="['/crypto-currency',currency.id]">
+              <td>{{ currency.rank }}</td>
+              <td>{{ currency.symbol }}</td>
+              <td>
+                <span *ngIf="currency.price_eur || currency.price_cny">{{ currency.price_eur }}{{ currency.price_cny }}</span>
+                <span *ngIf="!currency.price_eur && !currency.price_cny">{{ currency.price_usd }}</span>
+              </td>
+              <td>
+                <span *ngIf="currency['24h_volume_eur'] || currency['24h_volume_cny']">{{ currency['24h_volume_eur'] }}{{ currency['24h_volume_cny'] }}</span>
+                <span *ngIf="!currency['24h_volume_eur'] && !currency['24h_volume_cny']">{{ currency['24h_volume_usd'] }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
   </div>
 </div>

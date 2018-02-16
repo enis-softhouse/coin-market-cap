@@ -7,7 +7,8 @@ import {CurrencyActions} from '../../actions/currency.action';
 
 @Component({
   selector: 'app-crypto-currency-details',
-  templateUrl: './crypto-currency-details.component.html'
+  templateUrl: './crypto-currency-details.component.html',
+  styleUrls:['./crypto-currency-details.component.css']
 })
 export class CryptoCurrencyDetailsComponent implements OnInit {
   cryptoCurrency ?: ICryptoCurrency;
@@ -15,16 +16,16 @@ export class CryptoCurrencyDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private _cryptoCurrencyService: CryptoCurrencyService,
               private currencyActions: CurrencyActions) {
-    this.route.params.subscribe((params: Params) => {
-      this.id = params['id'];
-    });
+      this.route.params.subscribe((params: Params) => {
+        this.id = params['id'];
+      });
   }
 
   ngOnInit() {
-    this.callApi();
+    this.getCryptoCurrency();
   }
 
-  callApi() {
+  getCryptoCurrency() {
     this._cryptoCurrencyService.getCryptoCurrency(this.id, this.currencyActions.getCurrency())
       .subscribe(
         data => {

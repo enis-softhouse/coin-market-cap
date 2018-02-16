@@ -7,7 +7,8 @@ import { CryptoCurrencyActions } from '../../actions/crypto-currency.action';
 
 @Component({
   selector: 'app-crypto-currency-list',
-  templateUrl: './crypto-currency-list.component.html'
+  templateUrl: './crypto-currency-list.component.html',
+  styleUrls:['./crypto-currency-list.component.css']
 })
 export class CryptoCurrencyListComponent implements OnInit {
 
