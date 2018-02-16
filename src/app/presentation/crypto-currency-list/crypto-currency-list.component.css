@@ -1,14 +1,16 @@
-.table thead th{
-    border-top: none;
-    text-align: center;
-}
-.table tbody td {
-    text-align: center;
-}
-div.pull-right{
-    text-align: right;
+.table thead th {
+  border-top: none;
+  text-align: center;
 }
 
-button.refresh-btn{
-    margin: 15px;
+.table tbody td {
+  text-align: center;
+}
+
+div.pull-right {
+  text-align: right;
+}
+
+button.refresh-btn {
+  margin: 15px;
 }

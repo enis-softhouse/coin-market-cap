@@ -6,55 +6,57 @@
     </div>
   </div>
   <div class="col-md-12">
-      <div class="table-responsive">
-          <table class="table" *ngIf="cryptoCurrency">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Rank</td>
-                <td>{{cryptoCurrency.rank}}</td>
-              </tr>
-              <tr>
-                <td>Name</td>
-                <td>{{cryptoCurrency.name}}</td>
-              </tr>
-              <tr>
-                <td>Symbol</td>
-                <td>{{cryptoCurrency.symbol}}</td>
-              </tr>
-              <tr>
-                <td>24h Volume</td>
-                <td *ngIf="cryptoCurrency['24h_volume_eur']">{{cryptoCurrency['24h_volume_eur']}} EUR</td>
-                <td *ngIf="cryptoCurrency['24h_volume_cny']">{{cryptoCurrency['24h_volume_cny']}} CNY</td>
-                <td *ngIf="!cryptoCurrency['24h_volume_eur'] && !cryptoCurrency['24h_volume_cny']">{{cryptoCurrency['24h_volume_usd']}} USD</td>
-              </tr>
-              <tr>
-                <td>Price in BITCOIN</td>
-                <td>{{cryptoCurrency.price_btc}}</td>
-              </tr>
-              <tr>
-                <td>1h change</td>
-                <td>{{cryptoCurrency.percent_change_1h}}</td>
-              </tr>
-              <tr>
-                <td>24 change</td>
-                <td>{{cryptoCurrency.percent_change_24h}}</td>
-              </tr>
-              <tr>
-                <td>7d change</td>
-                <td>{{cryptoCurrency.percent_change_7d}}</td>
-              </tr>
-              <tr>
-                <td>Total supply</td>
-                <td>{{cryptoCurrency.total_supply}}</td>
-              </tr>
-            </tbody>
-          </table>
-      </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf="cryptoCurrency">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Rank</td>
+          <td>{{cryptoCurrency.rank}}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>{{cryptoCurrency.name}}</td>
+        </tr>
+        <tr>
+          <td>Symbol</td>
+          <td>{{cryptoCurrency.symbol}}</td>
+        </tr>
+        <tr>
+          <td>24h Volume</td>
+          <td *ngIf="cryptoCurrency['24h_volume_eur']">{{cryptoCurrency['24h_volume_eur']}} EUR</td>
+          <td *ngIf="cryptoCurrency['24h_volume_cny']">{{cryptoCurrency['24h_volume_cny']}} CNY</td>
+          <td *ngIf="!cryptoCurrency['24h_volume_eur'] && !cryptoCurrency['24h_volume_cny']">
+            {{cryptoCurrency['24h_volume_usd']}} USD
+          </td>
+        </tr>
+        <tr>
+          <td>Price in BITCOIN</td>
+          <td>{{cryptoCurrency.price_btc}}</td>
+        </tr>
+        <tr>
+          <td>1h change</td>
+          <td>{{cryptoCurrency.percent_change_1h}}</td>
+        </tr>
+        <tr>
+          <td>24 change</td>
+          <td>{{cryptoCurrency.percent_change_24h}}</td>
+        </tr>
+        <tr>
+          <td>7d change</td>
+          <td>{{cryptoCurrency.percent_change_7d}}</td>
+        </tr>
+        <tr>
+          <td>Total supply</td>
+          <td>{{cryptoCurrency.total_supply}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

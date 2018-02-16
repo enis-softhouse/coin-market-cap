@@ -1,4 +1,3 @@
-import {ICryptoCurrency} from '../modules/crypto-currency';
 import {IAppState} from './IAppState';
 import {GET_CRYPTOCURRENCIES} from '../actions/crypto-currency.action';
 import {SET_CURRENCY} from '../actions/currency.action';

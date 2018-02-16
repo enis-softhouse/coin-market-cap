@@ -1,9 +1,11 @@
-div.pull-right{
-    text-align: right;
+div.pull-right {
+  text-align: right;
 }
-button.refresh-btn{
-    margin: 15px;
+
+button.refresh-btn {
+  margin: 15px;
 }
-.table thead th{
-    border-top: none;
+
+.table thead th {
+  border-top: none;
 }

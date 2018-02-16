@@ -2,7 +2,6 @@ import {reducer} from './reducer';
 import {SET_CURRENCY} from '../actions/currency.action';
 import {GET_CRYPTOCURRENCIES} from '../actions/crypto-currency.action';
 
-
 describe('Reducer', () => {
   it('check initial state', () => {
     const state = reducer(undefined, {});

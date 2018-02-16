@@ -1,8 +1,5 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { select } from '@angular-redux/store';
-import { Observable } from 'rxjs/Observable';
 import {CurrencyActions} from '../../actions/currency.action';
-import {CryptoCurrencyActions} from '../../actions/crypto-currency.action';
 
 @Component({
   selector: 'app-menu',
@@ -14,8 +11,7 @@ export class MenuComponent implements OnInit {
 
   @Output() action = new EventEmitter();
 
-  constructor(public currencyActions: CurrencyActions,
-              private cryptoCurrencyActions: CryptoCurrencyActions) {
+  constructor(public currencyActions: CurrencyActions) {
   }
 
   changeCurrency(currency) {

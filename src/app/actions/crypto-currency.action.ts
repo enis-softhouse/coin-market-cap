@@ -13,7 +13,7 @@ export class CryptoCurrencyActions {
   }
 
   getCryptoCurrencies() {
-    let _state = this.ngRedux.getState();
+    const _state = this.ngRedux.getState();
     this.cryptoCurrencyService.getCryptoCurrencies((_state) ? _state.currency : 'USD')
       .subscribe(cryptoCurrencies => {
         this.ngRedux.dispatch({
